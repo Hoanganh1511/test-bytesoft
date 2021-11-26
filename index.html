@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./fontawesome-free-5.15.4-web/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <style>
+      .slider-slick {
+        text-align: center;
+      }
+      .slick-track {
+        display: flex;
+        align-items: flex-end;
+        /* width: 15020px !important; */
+      }
+      .slick-prev {
+        display: none !important;
+      }
+      .slick-next {
+        display: none !important;
+      }
+
+      .variable-width .slick-slide {
+      }
+      .variable-width .slick-slide > img {
+        /* width: 475px; */
+      }
+      .variable-width .slick-current {
+        transform: scale(1) !important;
+        transition: 0.2s linear;
+        /* transform: translate(0px, 0px) !important; */
+        z-index: 200000 !important;
+      }
+      .swiper {
+        width: 100%;
+        height: 100%;
+        overflow: visible !important;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .swiper-rtl .swiper-button-next:after {
+        content: "" !important;
+      }
+
+      .swiper-button-next {
+        position: absolute;
+        top: auto !important;
+        width: 30px !important;
+        height: 30px !important;
+        transform: translateX(-72px);
+      }
+      .swiper-button-prev {
+        position: absolute;
+        top: auto !important;
+        /* width: calc(var(--swiper-navigation-size) / 44 * 27);
+        height: var(--swiper-navigation-size); */
+        width: 30px !important;
+        height: 30px !important;
+        transform: translateX(72px);
+
+        /* width: 50px;
+        top: 50%; */
+      }
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        display: none;
+      }
+      :root {
+        --swiper-theme-color: #659c19;
+      }
+      /* .swiper-pagination-bullet {
+        width: var(
+          --swiper-pagination-bullet-width,
+          var(--swiper-pagination-bullet-size, 15px)
+        );
+        height: var(
+          --swiper-pagination-bullet-height,
+          var(--swiper-pagination-bullet-size, 15px)
+        );
+      } */
+      .swiper-pagination-bullet-active {
+        opacity: var(--swiper-pagination-bullet-opacity, 1);
+        background: var(
+          --swiper-pagination-color,
+          var(--swiper-theme-color)
+        ) !important;
+      }
+      .swiper-pagination-bullet {
+        width: var(
+          --swiper-pagination-bullet-width,
+          var(--swiper-pagination-bullet-size, 15px)
+        );
+        height: var(
+          --swiper-pagination-bullet-height,
+          var(--swiper-pagination-bullet-size, 15px)
+        );
+        display: inline-block;
+        border-radius: 50%;
+        background: var(--swiper-pagination-bullet-inactive-color, white);
+        opacity: var(--swiper-pagination-bullet-inactive-opacity, 4.2);
+      }
+
+      /* .swiper-slide-active {
+        z-index: 200;
+        transform: scale(1.2) !important;
+      } */
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <section>
+        <div class="container-wrap">
+          <div class="container">
+            <div class="content">
+              <div class="left__bar">
+                <ul>
+                  <li>ENG</li>
+                </ul>
+                <i class="fas fa-chevron-down"></i>
+                <div class="social">
+                  <ul class="social-ul">
+                    <li class="list__item--social">
+                      <i class="fab fa-facebook-f"></i>
+                    </li>
+                    <li class="list__item--social">
+                      <i class="fab fa-twitter"></i>
+                    </li>
+                    <li class="list__item--social">
+                      <i class="fab fa-vimeo-v"></i>
+                    </li>
+                    <li class="list__item--social">
+                      <i class="fab fa-instagram"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="right__bar">
+                <ul class="right__bar--list">
+                  <li class="list-item">
+                    <a class="link-item" href=""
+                      ><i class="fa fa-circle" aria-hidden="true"></i>Chia sẻ
+                      design</a
+                    >
+                  </li>
+                  <li class="list-item">
+                    <a class="link-item" href=""
+                      ><i class="fa fa-circle" aria-hidden="true"></i>Chia sẻ
+                      code</a
+                    >
+                  </li>
+                  <li class="list-item">
+                    <a class="link-item" href=""
+                      ><i class="fa fa-circle" aria-hidden="true"></i>Vệ tinh
+                      Blockchain</a
+                    >
+                  </li>
+                  <li class="list-item">
+                    <a class="link-item" href=""
+                      ><i class="fa fa-circle" aria-hidden="true"></i>Vệ tinh
+                      Code</a
+                    >
+                  </li>
+                </ul>
+                <h4 class="right__bar--hotline">
+                  <i class="fas fa-phone"></i>HOTLINE: 01231857192
+                </h4>
+                <!--  -->
+                <!-- <div class="responsive-navbar">
+                           
+                            <span><i class="fas fa-bars"></i></span>
+                        </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <nav>
+        <div class="wrap">
+          <div class="container">
+            <div class="nav-content">
+              <div class="logo">
+                <img src="./images/logo.png" alt="" />
+              </div>
+
+              <div class="navbar">
+                <ul class="nav-list">
+                  <li class="list-item">
+                    <i class="fa fa-circle" aria-hidden="true"></i
+                    ><a href="">Trang chủ</a>
+                  </li>
+                  <li class="list-item">
+                    <i class="fa fa-circle" aria-hidden="true"></i
+                    ><a href="">Về chúng tôi</a>
+                  </li>
+                  <li class="list-item">
+                    <i class="fa fa-circle" aria-hidden="true"></i
+                    ><a href="">Dịch vụ</a>
+                  </li>
+                  <li class="list-item">
+                    <i class="fa fa-circle" aria-hidden="true"></i
+                    ><a href="">Sản phẩm</a>
+                  </li>
+                  <li class="list-item">
+                    <i class="fa fa-circle" aria-hidden="true"></i
+                    ><a href="">Tin tức</a>
+                  </li>
+                  <li class="list-item">
+                    <i class="fa fa-circle" aria-hidden="true"></i
+                    ><a href="">Liên hệ</a>
+                  </li>
+                </ul>
+
+                <div class="responsive-navbar" onclick="openSidebar()">
+                  <span><i class="fas fa-bars"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero">
+          <div class="hero-content">
+            <h4 class="hero-text">Xây dựng website trong mơ của bạn cùng</h4>
+            <img src="./images/BYTESOFT JSC.png" class="company-img" alt="" />
+            <a href="#" class="button">Xem thêm</a>
+            <img src="./images/mouse_icon.png" class="mouse-img" alt="" />
+          </div>
+          <div class="end-hero">
+            <img src="./images/Layer 7.png" alt="" />
+          </div>
+        </div>
+      </nav>
+
+      <div class="sidebar">
+        <a href="#" class="sidebarClose" onclick="closeSidebar()">
+          Close <i class="fas fa-times"></i
+        ></a>
+        <div class="light-sidebar">
+          <i class="fas fa-circle"></i>
+          <i class="fas fa-circle"></i>
+          <i class="fas fa-circle"></i>
+        </div>
+        <ul class="sidebar-list">
+          <li class="list-item">
+            <a href="#"
+              ><i class="fas fa-home"></i>
+              <p>Trang chủ</p></a
+            >
+          </li>
+          <li class="list-item">
+            <a href="#"
+              ><i class="fas fa-sitemap"></i>
+              <p>Về chúng tôi</p></a
+            >
+          </li>
+          <li class="list-item">
+            <a href="#"
+              ><i class="fas fa-shipping-fast"></i>
+              <p>Dịch vụ</p></a
+            >
+          </li>
+          <li class="list-item">
+            <a href="#"
+              ><i class="fas fa-box"></i>
+              <p>Sản phẩm</p></a
+            >
+          </li>
+          <li class="list-item">
+            <a href="#"
+              ><i class="fas fa-newspaper"></i>
+              <p>Tin tức</p></a
+            >
+          </li>
+          <li class="list-item">
+            <a href="#"
+              ><i class="fas fa-phone"></i>
+              <p>Liên hệ</p></a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <!-- Wrap Services -->
+        <div class="wrap-services">
+          <div class="container">
+            <div class="services-content">
+              <div class="vertical-line">
+                <img src="./images/vertical_line.png" alt="" />
+              </div>
+              <div class="services-title">
+                <h4>DỊCH VỤ - BYTESOFT</h4>
+                <p>
+                  Với tiêu chí "Chất lượng hơn số lượng. ByteSoft luôn tạo ra
+                  những sản phẩm có giá trị cao nhất".<br />
+                  Đến với chúng tôi, khách hàng sẽ luôn được cung cấp các dịch
+                  vụ tốt nhất.
+                </p>
+              </div>
+              <div class="box-display">
+                <div class="left-box">
+                  <div class="wrap-item">
+                    <div
+                      class="item tablinks"
+                      onclick="openTabContent(event, 'design')"
+                    >
+                      <div class="image">
+                        <img src="./images/icon1-1.png" alt="" />
+                        <!-- <img src="./images/icon1.png" alt="" /> -->
+                      </div>
+                      <h4>Thiết kế Website</h4>
+                    </div>
+                    <div
+                      class="item tablinks"
+                      onclick="openTabContent(event, 'develope')"
+                    >
+                      <div class="image">
+                        <img src="./images/icon2.png" alt="" />
+                      </div>
+                      <h4>Lập trình phần mềm</h4>
+                    </div>
+                    <div
+                      class="item tablinks"
+                      onclick="openTabContent(event, 'blockchain')"
+                    >
+                      <div class="image">
+                        <img src="./images/icon3.png" alt="" />
+                      </div>
+                      <h4>Blockchain</h4>
+                    </div>
+                    <div
+                      class="item tablinks"
+                      onclick="openTabContent(event, 'educate')"
+                    >
+                      <div class="image">
+                        <img src="./images/icon4.png" alt="" />
+                      </div>
+                      <h4>Phần mềm giáo dục</h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="right-box tabcontent" id="design">
+                  <h4>THIẾT KẾ WEBSITE</h4>
+                  <div class="box">
+                    <div class="span-col-2">
+                      Nếu có ý định phát triển sự nghiệp bằng con đường Thiết kế
+                      đồ họa, hoặc ít nhất, phát triển các kỹ năng design phục
+                      vụ cho công việc chuyên ngành mà bạn đang theo đuổi, hãy
+                      tham khảo design cơ bản cho người mới bắt đầu!
+                    </div>
+                    <div>
+                      Khi đã có đủ các kiến thức nền tảng, người học design có
+                      thể bắt đầu tiến vào Photoshop! Nhưng có lẽ bạn nên học
+                      Illustrator trước rồi mới đến Photoshop.
+                    </div>
+                    <div><img src="./images/designer.jpg" alt="" /></div>
+                    <div class="span-col-2">
+                      Có rất nhiều cơ hội nghề nghiệp cho người học design ở vị
+                      trí/lĩnh vực này.
+                    </div>
+                    <a href="#" class="button-link">Xem thêm</a>
+                  </div>
+                </div>
+                <div class="right-box tabcontent" id="develope">
+                  <h4>LẬP TRÌNH PHẦN MỀM</h4>
+                  <div class="box">
+                    <div class="span-col-2">
+                      Lập trình phần mềm là việc lập trình viên sử dụng các ngôn
+                      ngữ lập trình và phần mềm hỗ trợ để viết ra những đoạn
+                      code theo một trình tự để tạo ra những phần mềm/ứng dụng
+                      chạy trên máy tính, điện thoại,
+                    </div>
+                    <div>
+                      Trong lập trình có một lĩnh vực gọi là lập trình phần mềm.
+                      Ngày nay mọi người hay đồng nhất hai khái niệm này, vậy
+                      thế nào là lập trình phần mềm?
+                    </div>
+                    <div><img src="./images/developer.jpg" alt="" /></div>
+                    <div class="span-col-2">
+                      Lập trình là nhàm chán, khô khan như lời đồn không?
+                    </div>
+                    <a href="#" class="button-link">Xem thêm</a>
+                  </div>
+                </div>
+                <div class="right-box tabcontent" id="blockchain">
+                  <h4>BLOCKCHAIN</h4>
+                  <div class="box">
+                    <div class="span-col-2">
+                      Blockchain (hay cuốn sổ cái) là hệ thống cơ sở dữ liệu cho
+                      phép lưu trữ và truyền tải các khối thông tin (block) được
+                      liên kết với nhau nhờ mã hóa. Và các công ty yêu cầu gì ở
+                      một người Blockchain Developer?
+                    </div>
+                    <div>
+                      Các khối thông tin này hoạt động độc lập và có thể mở rộng
+                      theo thời gian. Chúng được quản lý bởi những người tham
+                      gia hệ thống chứ không thông qua đơn vị trung gian.
+                    </div>
+                    <div><img src="./images/blockchain.jpg" alt="" /></div>
+                    <div class="span-col-2">
+                      Khối thông tin là những cuộc trao đổi, giao dịch trong
+                      thực tế.
+                    </div>
+                    <a href="#" class="button-link">Xem thêm</a>
+                  </div>
+                </div>
+                <div class="right-box tabcontent" id="educate">
+                  <h4>PHẦN MỀM GIÁO DỤC</h4>
+                  <div class="box">
+                    <div class="span-col-2">
+                      Phần mềm giáo dục là một chương trình được thiết kế với
+                      mục đích tạo thuận lợi cho quá trình dạy và học . Một phần
+                      mềm giáo dục là một công cụ giáo dục được phát triển đặc
+                      biệt cho mục đích này.
+                    </div>
+                    <div>
+                      Có mục tiêu giáo dục Cần một thiết bị kỹ thuật số để truy
+                      cập (máy tính, điện thoại thông minh , v.v.) Có tính tương
+                      tác Có chức năng cá nhân hóa công việc Dễ sử dụng
+                    </div>
+                    <div><img src="./images/educate.jpg" alt="" /></div>
+                    <div class="span-col-2">
+                      Chứa các bài tập giáo khoa trong toán học và khoa học.
+                    </div>
+                    <a href="#" class="button-link">Xem thêm</a>
+                  </div>
+                </div>
+              </div>
+              <div class="vertical-line-end">
+                <img src="./images/vertical_line.png" alt="" />
+              </div>
+              <div class="end-services">
+                <img src="./images/end-services.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wrap Phone -->
+        <div class="wrap-phone">
+          <div class="container">
+            <div class="vertical-line">
+              <img src="./images/vertical_v2.png" alt="" />
+            </div>
+            <div class="layer-background">
+              <img src="./images/banner-bg.png" class="banner-bg" alt="" />
+              <img src="./images/layer.png" class="layer" alt="" />
+            </div>
+            <div class="phone-content">
+              <h4 class="phone-title">TẠI SAO CHỌN BYTESOFT ?</h4>
+              <p class="phone-text">
+                Chi phí thấp – Giá trị lớn – Chuyên nghiệp - Độc đáo - Tin cậy -
+                Riêng biệt - Thành công
+              </p>
+              <div class="phone__box">
+                <div class="phone__box--left">
+                  <ul>
+                    <li>
+                      <div class="box-text">
+                        <h4>Về chuyên môn</h4>
+                        <p>
+                          Đội ngũ chuyên viên dày dặn kinh nghiệm với ý tưởng
+                          táo bạo, thiết kế đột phá. Phần mềm giống như bộ xương
+                          của công nghệ thông tin. Bộ xương càng chắc, bạn càng
+                          đi xa.
+                        </p>
+                      </div>
+                      <img src="./images/icon-5.png" alt="" />
+                    </li>
+                    <li>
+                      <div class="box-text">
+                        <h4>Dịch vụ khách hàng</h4>
+                        <p>
+                          Trách nhiệm đặt lên hàng đầu, tư vấn hỗ trợ nhiệt
+                          tình, chúng tôi luôn nỗ lực vui lòng khách đến, vừa
+                          lòng khách đi.
+                        </p>
+                      </div>
+                      <img src="./images/icon-5.png" alt="" />
+                    </li>
+                  </ul>
+                </div>
+                <div class="phone__box--middle">
+                  <div class="phone-image">
+                    <img
+                      src="./images/iphone-services.png"
+                      class="background-phone"
+                      alt=""
+                    />
+                    <img
+                      src="./images/Rectangle 59.png"
+                      class="background-white"
+                      alt=""
+                    />
+                    <img
+                      src="./images/logo-green.png"
+                      class="background-logo"
+                      alt=""
+                    />
+                    <div class="image-circle">
+                      <img
+                        src="./images/Ellipse 6.png"
+                        class="background-circle"
+                        alt=""
+                      />
+                      <img
+                        src="./images/Shape 2.png"
+                        class="background-shape"
+                        alt=""
+                      />
+                      <img
+                        src="./images/Layer 20.png"
+                        class="background-content"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="phone__box--right">
+                  <ul>
+                    <li>
+                      <div class="box-text">
+                        <h4>Bức tường bảo mật</h4>
+                        <p>
+                          “Nền tảng Blockchain, nền tảng không phải doanh nghiệp
+                          nào cũng có..., Blockchain được mã hóa hết sức cầu kỳ
+                          để ngăn chặn tuyệt đối việc giả mạo thông tin và có
+                          thể lưu lại vĩnh ...
+                        </p>
+                      </div>
+                      <img src="./images/icon-5.png" alt="" />
+                    </li>
+                    <li>
+                      <div class="box-text">
+                        <h4>Dịch vụ khách hàng</h4>
+                        <p>
+                          Trách nhiệm đặt lên hàng đầu, tư vấn hỗ trợ nhiệt
+                          tình, chúng tôi luôn nỗ lực vui lòng khách đến, vừa
+                          lòng khách đi.
+                        </p>
+                      </div>
+                      <img src="./images/icon-5.png" alt="" />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Phone-box Responsive -->
+              <div class="phone__box--responsive">
+                <div class="phone__box--left">
+                  <div class="phone-image">
+                    <img
+                      src="./images/iphone-services.png"
+                      class="background-phone"
+                      alt=""
+                    />
+                    <img
+                      src="./images/Rectangle 59.png"
+                      class="background-white"
+                      alt=""
+                    />
+                    <img
+                      src="./images/logo-green.png"
+                      class="background-logo"
+                      alt=""
+                    />
+                    <div class="image-circle">
+                      <img
+                        src="./images/Ellipse 6.png"
+                        class="background-circle"
+                        alt=""
+                      />
+                      <img
+                        src="./images/Shape 2.png"
+                        class="background-shape"
+                        alt=""
+                      />
+                      <img
+                        src="./images/Layer 20.png"
+                        class="background-content"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="phone__box--left">
+                               <ul>
+                                   <li>
+                                        <div class="box-text">
+                                            <h4>Về chuyên môn</h4>
+                                            <p>Đội ngũ chuyên viên dày dặn kinh nghiệm với ý tưởng táo bạo, thiết kế đột phá.</p>
+                                        </div>
+                                        <img src="./images/icon-5.png" alt="">
+                                   </li>
+                                    <li>
+                                        <div class="box-text">
+                                            <h4>Dịch vụ khách hàng</h4>
+                                            <p>Trách nhiệm đặt lên hàng đầu, tư vấn hỗ trợ nhiệt tình, chúng tôi luôn nỗ lực vui lòng khách đến, vừa lòng khách đi.</p>
+                                        </div>
+                                        <img src="./images/icon-5.png" alt="">
+                                   </li>
+                               </ul>
+                                
+                            </div> -->
+
+                <div class="phone__box--right">
+                  <ul>
+                    <li>
+                      <div class="box-text">
+                        <h4>Về chuyên môn</h4>
+                        <p>
+                          Đội ngũ chuyên viên dày dặn kinh nghiệm với ý tưởng
+                          táo bạo, thiết kế đột phá.
+                        </p>
+                      </div>
+                      <img src="./images/icon-5.png" alt="" />
+                    </li>
+                    <li>
+                      <div class="box-text">
+                        <h4>Dịch vụ khách hàng</h4>
+                        <p>
+                          Trách nhiệm đặt lên hàng đầu, tư vấn hỗ trợ nhiệt
+                          tình, chúng tôi luôn nỗ lực vui lòng khách đến, vừa
+                          lòng khách đi.
+                        </p>
+                      </div>
+                      <img src="./images/icon-5.png" alt="" />
+                    </li>
+                    <li>
+                      <div class="box-text">
+                        <h4>Bức tường bảo mật</h4>
+                        <p>
+                          Đội ngũ chuyên viên dày dặn kinh nghiệm với ý tưởng
+                          táo bạo, thiết kế đột phá.
+                        </p>
+                      </div>
+                      <img src="./images/icon-5.png" alt="" />
+                    </li>
+                    <li>
+                      <div class="box-text">
+                        <h4>Dịch vụ khách hàng</h4>
+                        <p>
+                          Trách nhiệm đặt lên hàng đầu, tư vấn hỗ trợ nhiệt
+                          tình, chúng tôi luôn nỗ lực vui lòng khách đến, vừa
+                          lòng khách đi.
+                        </p>
+                      </div>
+                      <img src="./images/icon-5.png" alt="" />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="vertical-line-end">
+              <img src="./images/vertical_v3.png" alt="" />
+            </div>
+          </div>
+          <div class="end-phone">
+            <img src="./images/INDEX.png" alt="" />
+          </div>
+        </div>
+
+        <!-- Wrap Product -->
+        <div class="wrap-product">
+          <div class="container">
+            <div class="product-content">
+              <div class="vertical-line">
+                <img src="./images/vertical_line.png" alt="" />
+              </div>
+              <div class="product-title">
+                <h4>NHÓM SẢN PHẨM BYTESOFT</h4>
+              </div>
+              <div class="product-image variable-width">
+                <!--  -->
+
+                <div class="product p1 slick-slide">
+                  <img src="./images/ipad1.png" class="side-phone" alt="" />
+                  <img src="./images/about-1.png" class="about-phone" alt="" />
+                </div>
+                <div class="product p1 slick-slide">
+                  <img src="./images/ipad1.png" class="side-phone" alt="" />
+                  <img src="./images/about-2.png" class="about-phone" alt="" />
+                </div>
+                <div class="product p1 slick-slide">
+                  <img src="./images/ipad1.png" class="side-phone" alt="" />
+                  <img src="./images/about-4.jpg" class="about-phone" alt="" />
+                </div>
+                <div class="product p1 slick-slide">
+                  <img src="./images/ipad1.png" class="side-phone" alt="" />
+                  <img src="./images/about-1.png" class="about-phone" alt="" />
+                </div>
+
+                <!-- <div class="product p1 slick-slide">
+                  <img src="./images/ipad1.png" class="side-phone" alt="" />
+                  <img src="./images/about-1.png" class="about-phone" alt="" />
+                </div>
+                <div class="product p1 slick-slide">
+                  <img src="./images/ipad1.png" class="side-phone" alt="" />
+                  <img src="./images/about-1.png" class="about-phone" alt="" />
+                </div> -->
+
+                <!-- <div class="product p2">
+                  <img src="./images/ipad1.png" class="side-phone" alt="" />
+                </div>
+                <div class="product p3">
+                  <img src="./images/ipad1.png" class="side-phone" alt="" />
+                  <img src="./images/about-2.png" class="about-phone" alt="" />
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wrap Response -->
+        <div class="wrap-response">
+          <div class="slogan">
+            <div class="container">
+              <p>Chúng tôi ở đây để <span>làm mọi thứ tốt hơn</span></p>
+            </div>
+          </div>
+          <div class="response">
+            <div class="background-response">
+              <img src="./images/quote-background.png" alt="" />
+            </div>
+
+            <div class="response-content">
+              <div class="container">
+                <div class="vertical-line-top">
+                  <img src="./images/vertical_v2.png" alt="" />
+                </div>
+                <h4 class="response-text">Ý KIẾN PHẢN HỒI TỪ KHÁCH HÀNG</h4>
+                <div class="slider">
+                  <div class="prev-btn swiper-button-prev">
+                    <i class="fas fa-chevron-left"></i>
+                  </div>
+
+                  <!-- test slider -->
+                  <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="slider-content swiper-slide">
+                        <div class="avatar">
+                          <img src="./images/avatar.png" alt="" />
+                        </div>
+                        <div class="center">
+                          <div class="bio">
+                            <p>
+                              "Morbi condimentum egestas quam, tempus ornare
+                              tortor. Vivamus ultricies gravida elit, sit amet
+                              interdum odio fringilla consequatSed quis
+                              condimentum quamorbi condimentum egestas quam,
+                              tempus ornare tortor fri"
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="profile">
+                          <h5>Nguyễn Văn Hà - Khách Hàng</h5>
+                        </div>
+                      </div>
+
+                      <div class="slider-content swiper-slide">
+                        <div class="avatar">
+                          <img src="./images/avatar3.jpg" alt="" />
+                        </div>
+                        <div class="center">
+                          <div class="bio">
+                            <p>"Permission to dance ... yeah !! "</p>
+                          </div>
+                        </div>
+
+                        <div class="profile">
+                          <h5>Hoàng Tuấn Anh - Khách Hàng</h5>
+                        </div>
+                      </div>
+
+                      <div class="slider-content swiper-slide">
+                        <div class="avatar">
+                          <img src="./images/avatar2.jpg" alt="" />
+                        </div>
+                        <div class="center">
+                          <div class="bio">
+                            <p>
+                              "Tôi cảm thấy những sản phẩm mà công ty cung cấp
+                              là tốt nhất trong số những sản phẩm mà tôi đã dùng
+                              qua. Rất ủng hộ bytesoft phát triển trong tương
+                              lai nhiều hơn nữa"
+                            </p>
+                          </div>
+                        </div>
+
+                        <div class="profile">
+                          <h5>Lương Hà Vinh - Khách Hàng</h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                  </div>
+
+                  <!-- <div class="slider-content">
+                    <div class="avatar"></div>
+                    <div class="center">
+                      <div class="bio">
+                        <p>
+                          "Morbi condimentum egestas quam, tempus ornare tortor.
+                          Vivamus ultricies gravida elit, sit amet interdum odio
+                          fringilla consequatSed quis condimentum quamorbi
+                          condimentum egestas quam, tempus ornare tortor fri"
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="profile">
+                      <h5>Nguyễn Văn Hà - Khách Hàng</h5>
+                    </div>
+                  </div> -->
+
+                  <div class="next-btn swiper-button-next">
+                    <i class="fas fa-chevron-right"></i>
+                  </div>
+                </div>
+
+                <div class="vertical-line-bottom">
+                  <img src="./images/vertical_v2.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="end-response">
+              <img src="./images/INDEX.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Wrap News -->
+        <div class="wrap-news">
+          <div class="container">
+            <div class="news-content">
+              <div class="vertical-line">
+                <img src="./images/vertical_line.png" alt="" />
+              </div>
+              <h4 class="news-title">TIN TỨC</h4>
+              <div class="news-list">
+                <div class="news__item">
+                  <img src="./images/blog-1.png" alt="" />
+                  <div class="news__item--content">
+                    <p class="news-date">
+                      <i class="far fa-clock"></i> on April 28, 2017
+                    </p>
+                    <h4>Web development project</h4>
+                    <p class="news-desc">
+                      During the dog days of summer, there’s plenty to do in the
+                      gar
+                    </p>
+                    <a href="">Đọc tiếp</a>
+                  </div>
+                </div>
+                <div class="news__item">
+                  <img src="./images/blog-2.png" alt="" />
+                  <div class="news__item--content">
+                    <p class="news-date">
+                      <i class="far fa-clock"></i> on April 28, 2017
+                    </p>
+                    <h4>Web development project</h4>
+                    <p class="news-desc">
+                      During the dog days of summer, there’s plenty to do in the
+                      gar
+                    </p>
+                    <a href="">Đọc tiếp</a>
+                  </div>
+                </div>
+                <div class="news__item">
+                  <img src="./images/blog-3.png" alt="" />
+                  <div class="news__item--content">
+                    <p class="news-date">
+                      <i class="far fa-clock"></i> on April 28, 2017
+                    </p>
+                    <h4>Web development project</h4>
+                    <p class="news-desc">
+                      During the dog days of summer, there’s plenty to do in the
+                      gar
+                    </p>
+                    <a href="#">Đọc tiếp</a>
+                  </div>
+                </div>
+              </div>
+              <div class="end-news">
+                <img src="./images/vertical_line.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wrap recruitment -->
+        <div class="wrap-recruitment">
+          <div class="background__recuitment">
+            <img src="./images/footer-bg.png" alt="" />
+          </div>
+          <div class="recruitment-main">
+            <div class="container">
+              <div class="recruitment-content">
+                <div class="vertical-line">
+                  <img src="./images/vertical_v2.png" alt="" />
+                </div>
+
+                <h4>THÔNG TIN TUYỂN DỤNG</h4>
+
+                <div class="recruitment-info">
+                  <div class="recruitment-list">
+                    <ul>
+                      <li>
+                        <img src="./images/aim.png" alt="" />
+                        <p>Bạn năng động và tự tin?</p>
+                      </li>
+                      <li>
+                        <img src="./images/aim.png" alt="" />
+                        <p>Bạn đam mê công nghệ và sáng tạo không ngừng?</p>
+                      </li>
+                      <li>
+                        <img src="./images/aim.png" alt="" />
+                        <p>
+                          Bạn mong muốn một môi trường thân thiện và chuyên
+                          nghiệp để bạn <br />
+                          thỏa sức phấn đầu vì một tương lai tốt đẹp hơn
+                        </p>
+                      </li>
+                      <li>
+                        <img src="./images/aim.png" alt="" />
+                        <p>Bạn năng động và tự tin?</p>
+                      </li>
+                    </ul>
+                    <a href="#" class="button">Gia nhập BYTESOFT</a>
+                  </div>
+                  <img
+                    src="./images/about-recruit.png"
+                    class="image-recruit"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="background__recruitment--end">
+            <img src="./images/end-bg.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="wrap-footer">
+        <div class="container">
+          <div class="circle-logo">
+            <img src="./images/bg-circle.png" alt="" />
+            <img src="./images/B.png" alt="" />
+          </div>
+          <div class="footer-content">
+            <img
+              class="footer__content--logo"
+              src="./images/Layer 24.png"
+              alt=""
+            />
+            <p class="footer-desc">
+              Farmland is a mid-sized agribusiness and land management company
+              built for today's world knows for its legacy of achievement
+            </p>
+            <div class="footer-contact">
+              <ul>
+                <li>
+                  <img src="./images/location-icon.png" alt="" />
+                  <p>Địa chỉ : 21 Lê Đức Thọ, Mỹ Đình, Hà Nội</p>
+                </li>
+                <li>
+                  <img src="./images/contact-icon.png" alt="" />
+                  <p>Số điện thoại: 0904 609 780</p>
+                </li>
+                <li>
+                  <img src="./images/message-icon.png" alt="" />
+                  <p>Email liên hệ: bytesoft@gmail.com</p>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-social">
+              <ul>
+                <li><i class="fab fa-twitter"></i></li>
+                <li><i class="fab fa-facebook-f"></i></li>
+                <li><i class="fab fa-instagram"></i></li>
+                <li><i class="fab fa-google-plus-g"></i></li>
+                <li><i class="fab fa-linkedin-in"></i></li>
+                <li><i class="fab fa-youtube"></i></li>
+                <li><i class="fab fa-vimeo-v"></i></li>
+                <li><i class="fas fa-basketball-ball"></i></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>© COPYRIGHT 2018 ALL RIGHTS RESERVED</p>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+    ></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
+    ></script> -->
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <!-- Tab Content -->
+    <script type="text/javascript">
+      function openTabContent(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "flex";
+        evt.currentTarget.className += " active";
+      }
+
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      //
+      $(".variable-width").slick({
+        dots: false,
+        infinite: false,
+
+        speed: 1000,
+        slidesToShow: 3,
+        centerMode: true,
+        variableWidth: true,
+      });
+
+      // const a = document.querySelectorAll(".slick-slide");
+
+      // console.log(arr[0].attributes[1].value);
+
+      // const list = document.getElementsByClassName("slick-slide");
+      // const indexReview = document.getElementsByClassName("slick-current");
+
+      // var arr = Array.from(list);
+      // var arrIndexReview = Array.from(indexReview);
+      // console.log(arrIndexReview);
+      // arr.map((a) => {
+      //   let index = Number(arrIndexReview[0].attributes[1].value);
+      //   console.log(index);
+
+      //   console.log(a.attributes[1].value, index + 1);
+      //   console.log(a.attributes[1].value, index - 1);
+      //   if (a.attributes[1].value == index + 1) {
+      //     a.style.backgroundColor = "red";
+      //   }
+      //   if (a.attributes[1].value == index - 1) {
+      //     a.style.backgroundColor = "blue";
+      //   }
+      // });
+
+      const bar = document.querySelector(".responsive-bar");
+      const sidebar = document.querySelector(".sidebar");
+
+      function openSidebar() {
+        sidebar.style.display = "block";
+      }
+      function closeSidebar() {
+        // const closeSidebar = document.querySelector(".sidebarClose");
+        sidebar.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
